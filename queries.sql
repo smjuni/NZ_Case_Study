@@ -5,7 +5,7 @@ FROM sales_data;
 SELECT item_sku,
 SUM(skus_count) AS "Number Ordered"
 FROM sales_data
-WHERE order_date BETWEEN '2020-08-05' AND '2020-09-30'
+WHERE order_date >= '2020-08-05' AND order_date < '2020-10-01'
 GROUP BY item_sku
 ORDER BY "Number Ordered" DESC
 LIMIT 3;
